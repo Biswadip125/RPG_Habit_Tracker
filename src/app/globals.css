@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin 'tailwind-scrollbar';
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 100%;
+    scale: 1.2;
+  }
+  50% {
+    opacity: 0.6;
+    scale: 1;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 2s infinite ease-in-out;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@theme {
+  --breakpoint-xs: 34rem;
+  --breakpoint-3xl: 100rem;
+  --breakpoint-xl: 78rem;
+  --breakpoint-2xl: 90rem;
+  --breakpoint-semilarge: 68px;
+}

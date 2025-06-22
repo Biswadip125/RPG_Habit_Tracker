@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Habit" ALTER COLUMN "goal" DROP NOT NULL;
