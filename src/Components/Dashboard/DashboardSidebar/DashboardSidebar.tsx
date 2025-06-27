@@ -4,9 +4,9 @@ import DashboardSidebarMenuItems from "./DashboardSidebarMenuItems";
 import { X } from "lucide-react";
 import { closeSidebar } from "@/lib/store/features/sidebarNavigation/sidebarSlice";
 import DashboardFooter from "./DashboardFooter";
-
+import type { RootState } from "@/lib/store/store";
 const DashboardSidebar = () => {
-  const isOpen = useSelector((state) => state.sidebar.isOpen);
+  const isOpen = useSelector((state: RootState) => state.sidebar.isOpen);
   const dispatch = useDispatch();
   return (
     <div

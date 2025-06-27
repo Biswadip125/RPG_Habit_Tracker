@@ -60,6 +60,8 @@ export const createAccount = async (
         name,
         email,
         password: hashedPassword,
+        xp: 0,
+        level: 0,
       },
     });
   } catch (error) {

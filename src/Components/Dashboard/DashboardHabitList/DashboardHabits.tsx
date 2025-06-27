@@ -15,16 +15,25 @@ const DashboardHabits = async () => {
       </div>
 
       <div className="flex-grow overflow-y-auto h-full gap-4 lg:space-y-4  scrollbar-hide transition-all duration-500 scroll-smooth">
-        <div className="columns-1 sm:columns-2 md:columns-3 xl:columns-4 3xl:columns-5">
-          {habits.map((habit) => (
-            <div
-              key={habit.id}
-              className="break-inside-avoid lg:mb-4 md:mb-2 mb-4"
-            >
-              <HabitCard habit={habit} />
-            </div>
-          ))}
-        </div>
+        {habits.length > 0 ? (
+          <div className="columns-1 sm:columns-2 md:columns-3 xl:columns-4 3xl:columns-5">
+            {habits.map((habit) => (
+              <div
+                key={habit.id}
+                className="break-inside-avoid lg:mb-4 md:mb-2 mb-4"
+              >
+                <HabitCard habit={habit} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="w-full  ">
+            <p className="text-2xl font-semibold  mt-4">
+              {" "}
+              No Habits yet, try to add Some
+            </p>{" "}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import AuthToast from "@/Components/AuthToast";
 import { toastConfig } from "@/lib/toastConfig";
 import StoreProvider from "./StoreProvider";
+import HabitCompleteModal from "@/Components/HabitCompleteModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen w-full`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen w-full `}
       >
         <StoreProvider>
           <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 max-w-full h-screen flex flex-col">
@@ -41,7 +42,7 @@ export default function RootLayout({
                 reverseOrder={false}
                 toastOptions={toastConfig}
               />
-
+              <HabitCompleteModal />
               <AuthToast />
               <Header />
               <main className="h-[calc(100vh-75px)] overflow-hidden">

@@ -65,7 +65,7 @@ const TimerHabitComponent: React.FC<TimerHabitComponentProps> = ({ habit }) => {
           </button>
         </div>
         <p className="">
-          Points: <span className="text-cyan-500">+{habit.xp} xp</span>
+          Points : <span className="text-cyan-500">+{habit.xp} xp</span>
         </p>
       </div>
     </div>

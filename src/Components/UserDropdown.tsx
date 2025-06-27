@@ -16,7 +16,6 @@ const UserDropdown = () => {
   const dispatch = useDispatch();
   const pathname = usePathname();
 
-  console.log(pathname);
   const dropDownRef = useRef<HTMLDivElement | null>(null);
 
   const handleLogout = async () => {
@@ -48,7 +47,7 @@ const UserDropdown = () => {
 
   return (
     <div
-      className={`absolute top-18 sm:right-30 right-4 z-100 ${
+      className={`absolute top-19 sm:right-32 right-4 z-50 ${
         isDropdownOpen ? "block" : "hidden"
       } h-auto w-40 ${
         bgLocations.includes(pathname) ? "bg-white/5" : ""

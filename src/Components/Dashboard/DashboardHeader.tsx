@@ -1,8 +1,14 @@
 import { auth } from "@/auth";
+import { prisma } from "@/lib";
 import * as motion from "motion/react-client";
 import { LuSwords } from "react-icons/lu";
 const DashboardHeader = async () => {
   const session = await auth();
+  const userDetails = await prisma.user.findFirst({
+    where: {
+      id: session?.user?.id,
+    },
+  });
 
   return (
     <div className="flex justify-between w-full xs:flex-row flex-col xs:gap-0 gap-2">
@@ -29,11 +35,11 @@ const DashboardHeader = async () => {
               />
             </div>
             <p className="sm:text-md text-sm text-end font-semibold">
-              XP: 50/100
+              XP: {userDetails?.xp === null ? 0 : userDetails?.xp}/100
             </p>
           </div>
           <div className="sm:w-12 sm:h-12 h-10 w-10 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center text-xl font-bold">
-            1
+            {userDetails?.level === null ? 0 : userDetails?.level}
           </div>
         </div>
       </div>

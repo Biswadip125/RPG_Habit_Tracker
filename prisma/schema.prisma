@@ -43,6 +43,8 @@ model User {
   password      String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
+  xp            Int?
+  level         Int?
   accounts      Account[]
   habits        Habit[]
 }

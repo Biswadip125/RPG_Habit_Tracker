@@ -25,7 +25,6 @@ const Header = () => {
         <FiSidebar
           size={22}
           className="text-cyan-500/80 2xl:hidden hover:cursor-pointer"
-          onClick={() => dispatch(toggleSidebar())}
         />
         <h1 className="text-md md:text-2xl font-extrabold font-mono text-cyan-300 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)] tracking-wide ">
           RPG Habit Tracker
@@ -37,13 +36,17 @@ const Header = () => {
           height={40}
           className="hover:scale-110 transition duration-300 ease-in-out "
           alt="header-image"
+          onClick={() => dispatch(toggleSidebar())}
         />
       </div>
 
       {/* Right Side */}
       <div className="flex gap-4 items-center">
         {session?.user ? (
-          <div className="avatar avatar-placeholder">
+          <div
+            className="avatar avatar-placeholder"
+            onClick={() => dispatch(toggleUserDropdown())}
+          >
             {session?.user?.image ? (
               <div className="relative xs:h-[45px] xs:w-[45px] h-[40px] w-[40px] rounded-full overflow-hidden ">
                 <Image
@@ -51,7 +54,6 @@ const Header = () => {
                   alt="user-image"
                   fill
                   className="rounded-full hover:brightness-110 transition cursor-pointer sm:w-[30px] sm:h-[35px] md:w-[45px] md:h-[40px]"
-                  onClick={() => dispatch(toggleUserDropdown())}
                 />
               </div>
             ) : (

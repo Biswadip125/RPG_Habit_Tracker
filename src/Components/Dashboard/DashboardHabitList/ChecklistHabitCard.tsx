@@ -28,7 +28,7 @@ const ChecklistHabitCard: React.FC<ChecklistHabitCardProps> = ({ habit }) => {
         </div>
 
         <p className="ml-0.5">
-          Points: <span className="text-cyan-500">+{habit.xp} xp</span>
+          Points : <span className="text-cyan-500">+{habit.xp} xp</span>
         </p>
       </div>
     </div>
